@@ -3,7 +3,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ESNext",
     "verbatimModuleSyntax": true,
     "allowJs": true,
     "resolveJsonModule": true,
@@ -13,7 +13,7 @@
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "lib": [
-      "es2022"
+      "ES2023"
     ]
   },
 }
