@@ -1,4 +1,4 @@
-import { getInputPath, parseInputToArray } from "../../helpers.js"
+import { getInputPath, parseInputToArray } from "../../../helpers.js"
 
 const calibrationLines = parseInputToArray(getInputPath(import.meta.url, "input"))
 
