@@ -42,7 +42,7 @@ function getGameId(gameLine: string) {
   return parseInt(gameId, 10)
 }
 
-class CubesBag {
+export class CubesBag {
   _red = 0
   _blue = 0
   _green = 0
@@ -55,14 +55,14 @@ class CubesBag {
   }
 }
 
-function parseCubeData(cubesData: RegExpMatchArray): [number, CubeColor][] {
+export function parseCubeData(cubesData: RegExpMatchArray): [number, CubeColor][] {
   return cubesData.map((cubeData) => {
     const [amount, color] = cubeData.split(/\s/) as [string, CubeColor]
     return [parseInt(amount, 10), color]
   })
 }
 
-function extractCubeData(game: string) {
+export function extractCubeData(game: string) {
   const gameRegex = /(\d+) (blue|red|green)/g
   return game.match(gameRegex)!
 }
