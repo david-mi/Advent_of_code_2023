@@ -1,11 +1,11 @@
 import { getInputPath, parseInputToArray } from "../../../helpers.js";
-import { setEngineNumbers, getNumberAdjacentSymbol } from "../../part_one/solutions/part_one.js";
+import { setEngineNumbers, getNumberLinkedCharacter } from "../../part_one/solutions/part_one.js";
 const engineLines = parseInputToArray(getInputPath(import.meta.url, "input"));
 const engineNumbers = setEngineNumbers(engineLines);
 function getEnginesNumbersSum(engineNumbers) {
     const gearsData = new Map();
     return engineNumbers.reduce((engineNumberSum, engineNumber) => {
-        const numberAdjacentSymbol = getNumberAdjacentSymbol(engineNumber, isCharGear, engineLines);
+        const numberAdjacentSymbol = getNumberLinkedCharacter({ engineNumber, specialCharacterChecker: isAsterisk, engineLines });
         if (numberAdjacentSymbol) {
             const { x, y } = numberAdjacentSymbol;
             const keyIdentifier = `x-${x}-y-${y}`;
@@ -20,7 +20,7 @@ function getEnginesNumbersSum(engineNumbers) {
         return engineNumberSum;
     }, 0);
 }
-function isCharGear(char) {
+function isAsterisk(char) {
     return char === "*";
 }
 export const day03PartTwoSolution = getEnginesNumbersSum(engineNumbers);

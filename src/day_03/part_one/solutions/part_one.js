@@ -6,12 +6,12 @@ export function setEngineNumbers(engineLines) {
         const engineLine = engineLines[y];
         for (let x = 0; x < engineLine.length; x++) {
             const char = engineLine[x];
-            if (isCharDigit(char)) {
+            if (isDigitCharacter(char)) {
                 let numberChar = char;
                 let nextIndex = x + 1;
                 let nextChar = engineLine[nextIndex];
                 const startingX = x;
-                while (isCharDigit(nextChar)) {
+                while (isDigitCharacter(nextChar)) {
                     numberChar += nextChar;
                     nextIndex += 1;
                     nextChar = engineLine[nextIndex];
@@ -28,14 +28,15 @@ export function setEngineNumbers(engineLines) {
     }
     return engineNumbers;
 }
-function getSumOfNumbersWithAdjacentSymbol(engineNumbers) {
-    return engineNumbers.reduce((sumOfNumbersWithAdjacentSymbol, engineNumber) => {
-        return getNumberAdjacentSymbol(engineNumber, isCharSymbol, engineLines)
-            ? sumOfNumbersWithAdjacentSymbol += engineNumber.value
-            : sumOfNumbersWithAdjacentSymbol;
+function getSumOfNumbersWithLinkedCharacter(engineNumbers) {
+    return engineNumbers.reduce((sumOfNumbersWithLinkedCharacter, engineNumber) => {
+        return getNumberLinkedCharacter({ engineNumber, specialCharacterChecker: isSpecialCharacter, engineLines })
+            ? sumOfNumbersWithLinkedCharacter += engineNumber.value
+            : sumOfNumbersWithLinkedCharacter;
     }, 0);
 }
-export function getNumberAdjacentSymbol({ startingX, endingX, y }, symbolCheckCb, engineLines) {
+export function getNumberLinkedCharacter(props) {
+    const { engineNumber: { startingX, endingX, y }, specialCharacterChecker, engineLines } = props;
     for (let x = startingX; x <= endingX; x++) {
         const coordinatesToCheck = [
             { y: y - 1, x: x - 1 },
@@ -48,7 +49,7 @@ export function getNumberAdjacentSymbol({ startingX, endingX, y }, symbolCheckCb
             { y: y + 1, x: x + 1 },
         ];
         for (const { x, y } of coordinatesToCheck) {
-            const isSymbol = symbolCheckCb(engineLines[y]?.[x]);
+            const isSymbol = specialCharacterChecker(engineLines[y]?.[x]);
             if (isSymbol) {
                 return { y, x };
             }
@@ -56,13 +57,13 @@ export function getNumberAdjacentSymbol({ startingX, endingX, y }, symbolCheckCb
     }
     return null;
 }
-function isCharDigit(char) {
+function isDigitCharacter(char) {
     return /\d/.test(char);
 }
-function isCharSymbol(char) {
+function isSpecialCharacter(char) {
     return (char !== undefined
-        && isCharDigit(char) === false
+        && isDigitCharacter(char) === false
         && char !== ".");
 }
 const engineNumbers = setEngineNumbers(engineLines);
-export const day03PartOneSolution = getSumOfNumbersWithAdjacentSymbol(engineNumbers);
+export const day03PartOneSolution = getSumOfNumbersWithLinkedCharacter(engineNumbers);

@@ -1,5 +1,5 @@
 import { getInputPath, parseInputToArray } from "../../../helpers.js"
-import { setEngineNumbers, getNumberAdjacentSymbol, type EngineNumber } from "../../part_one/solutions/part_one.js"
+import { setEngineNumbers, getNumberLinkedCharacter, type EngineNumber } from "../../part_one/solutions/part_one.js"
 
 const engineLines = parseInputToArray(getInputPath(import.meta.url, "input"))
 const engineNumbers = setEngineNumbers(engineLines)
@@ -8,7 +8,7 @@ function getEnginesNumbersSum(engineNumbers: EngineNumber[]) {
   const gearsData: Map<string, number> = new Map()
 
   return engineNumbers.reduce((engineNumberSum, engineNumber) => {
-    const numberAdjacentSymbol = getNumberAdjacentSymbol(engineNumber, isCharGear, engineLines)
+    const numberAdjacentSymbol = getNumberLinkedCharacter({ engineNumber, specialCharacterChecker: isAsterisk, engineLines })
 
     if (numberAdjacentSymbol) {
       const { x, y } = numberAdjacentSymbol
@@ -27,7 +27,7 @@ function getEnginesNumbersSum(engineNumbers: EngineNumber[]) {
   }, 0)
 }
 
-function isCharGear(char?: string) {
+function isAsterisk(char?: string) {
   return char === "*"
 }
 
