@@ -3,6 +3,7 @@ import { day01PartTwoSolution } from "./src/day_01/part_two/solutions/part_two.j
 import { day02PartOneSolution } from "./src/day_02/part_one/solutions/part_one.js";
 import { day02PartTwoSolution } from "./src/day_02/part_two/solutions/part_two.js";
 import { day03PartOneSolution } from "./src/day_03/part_one/solutions/part_one.js";
+import { day03PartTwoSolution } from "./src/day_03/part_two/solutions/part_two.js";
 console.log({
     day01: {
         partOne: day01PartOneSolution,
@@ -13,6 +14,7 @@ console.log({
         partTwo: day02PartTwoSolution
     },
     day03: {
-        partOne: day03PartOneSolution
+        partOne: day03PartOneSolution,
+        partTwo: day03PartTwoSolution
     }
 });
