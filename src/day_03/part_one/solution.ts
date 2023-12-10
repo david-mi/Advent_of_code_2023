@@ -1,7 +1,7 @@
-import { parseInputToArray } from "../../helpers.js"
+import { setInputLinesToArray } from "../../helpers.js"
 import { input } from "./inputs/input.js"
 
-const engineLines = parseInputToArray(input)
+const engineLines = setInputLinesToArray(input)
 
 export interface EngineNumber {
   value: number

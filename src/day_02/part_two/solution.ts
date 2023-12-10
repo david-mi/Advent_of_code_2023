@@ -1,8 +1,8 @@
-import { parseInputToArray } from "../../helpers.js"
+import { setInputLinesToArray } from "../../helpers.js"
 import { parseCubeData, extractCubeData, CubesBag } from "../part_one/solution.js"
 import { input } from "./inputs/input.js"
 
-const games = parseInputToArray(input)
+const games = setInputLinesToArray(input)
 type CubeColor = "red" | "blue" | "green"
 
 function day02PartTwo() {

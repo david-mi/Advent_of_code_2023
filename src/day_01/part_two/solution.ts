@@ -1,8 +1,8 @@
-import { parseInputToArray } from "../../helpers.js"
+import { setInputLinesToArray } from "../../helpers.js"
 import { getCalibrationValuesSum } from "../part_one/solution.js"
 import { input } from "../part_one/inputs/input.js"
 
-const calibrationLines = parseInputToArray(input)
+const calibrationLines = setInputLinesToArray(input)
 
 const charsNumbersMap = {
   "one": "1",

@@ -1,8 +1,8 @@
-import { parseInputToArray } from "../../helpers.js"
+import { setInputLinesToArray } from "../../helpers.js"
 import { setEngineNumbers, getNumberLinkedCharacter, type EngineNumber } from "../part_one/solution.js"
 import { input } from "./inputs/input.js"
 
-const engineLines = parseInputToArray(input)
+const engineLines = setInputLinesToArray(input)
 const engineNumbers = setEngineNumbers(engineLines)
 
 function getEnginesNumbersSum(engineNumbers: EngineNumber[]) {

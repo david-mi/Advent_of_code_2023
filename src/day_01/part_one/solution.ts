@@ -1,7 +1,7 @@
-import { parseInputToArray } from "../../helpers.js"
+import { setInputLinesToArray } from "../../helpers.js"
 import { input } from "./inputs/input.js"
 
-const calibrationLines = parseInputToArray(input)
+const calibrationLines = setInputLinesToArray(input)
 
 export function getCalibrationValuesSum(calibrationLines: string[]) {
   let calibrationValuesSum = 0
