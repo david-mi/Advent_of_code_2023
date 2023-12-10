@@ -8,7 +8,6 @@ export function getInputPath(url: string, filename: string) {
   return path.join(parentDirname, "inputs", `${filename}.txt`);
 }
 
-export function parseInputToArray(inputPath: string) {
-  const input = fs.readFileSync(inputPath, { encoding: "utf-8" });
+export function parseInputToArray(input: string) {
   return input.split(/\n/);
 }

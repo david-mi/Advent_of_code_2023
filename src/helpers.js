@@ -6,7 +6,6 @@ export function getInputPath(url, filename) {
     const parentDirname = path.resolve(dirname, "..");
     return path.join(parentDirname, "inputs", `${filename}.txt`);
 }
-export function parseInputToArray(inputPath) {
-    const input = fs.readFileSync(inputPath, { encoding: "utf-8" });
+export function parseInputToArray(input) {
     return input.split(/\n/);
 }

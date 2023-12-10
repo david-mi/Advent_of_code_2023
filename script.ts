@@ -1,9 +1,9 @@
-import { day01PartOneSolution } from "./src/day_01/part_one/solutions/part_one.js";
-import { day01PartTwoSolution } from "./src/day_01/part_two/solutions/part_two.js";
-import { day02PartOneSolution } from "./src/day_02/part_one/solutions/part_one.js";
-import { day02PartTwoSolution } from "./src/day_02/part_two/solutions/part_two.js";
-import { day03PartOneSolution } from "./src/day_03/part_one/solutions/part_one.js";
-import { day03PartTwoSolution } from "./src/day_03/part_two/solutions/part_two.js";
+import { day01PartOneSolution } from "./src/day_01/part_one/solution.js";
+import { day01PartTwoSolution } from "./src/day_01/part_two/solution.js";
+import { day02PartOneSolution } from "./src/day_02/part_one/solution.js";
+import { day02PartTwoSolution } from "./src/day_02/part_two/solution.js";
+import { day03PartOneSolution } from "./src/day_03/part_one/solution.js";
+import { day03PartTwoSolution } from "./src/day_03/part_two/solution.js";
 
 console.log({
   day01: {
