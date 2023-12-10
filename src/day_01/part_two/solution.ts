@@ -1,6 +1,6 @@
 import { parseInputToArray } from "../../helpers.js"
 import { getCalibrationValuesSum } from "../part_one/solution.js"
-import { input } from "../inputs/input.js"
+import { input } from "../part_one/inputs/input.js"
 
 const calibrationLines = parseInputToArray(input)
 

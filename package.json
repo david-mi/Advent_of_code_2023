@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "watch": "tsc --watch",
-    "start": "node --watch script.js"
+    "start": "node --watch ./dist/script.js"
   },
   "keywords": [],
   "author": "",

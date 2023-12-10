@@ -1,5 +1,5 @@
 import { parseInputToArray } from "../../helpers.js"
-import { input } from "../inputs/input.js"
+import { input } from "./inputs/input.js"
 
 const calibrationLines = parseInputToArray(input)
 
