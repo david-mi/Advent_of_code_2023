@@ -3,13 +3,13 @@ import { input } from "./inputs/input.js";
 
 const cardsLine = setInputLinesToArray(input)
 
-function extractCardNumbers(cardLine: string) {
+export function extractCardNumbers(cardLine: string) {
   const numbersExtractionRegex = /Card\s+\d+:\s+(\d{1,2}.+(?=\s\|)).+((?<=\|\s).+)/
   const matcher = cardLine.match(numbersExtractionRegex)!
   return [matcher[1], matcher[2]] as [string, string]
 }
 
-function setCardNumbersToArray(cardNumbers: string) {
+export function setCardNumbersToArray(cardNumbers: string) {
   const spaceRegex = /\s+/
   return cardNumbers.split(spaceRegex)
 }
