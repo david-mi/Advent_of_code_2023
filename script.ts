@@ -8,6 +8,7 @@ import { day04PartOneSolution } from "./src/day_04/part_one/solution.js";
 import { day04PartTwoSolution } from "./src/day_04/part_two/solution.js";
 import { day05PartOneSolution } from "./src/day_05/part_one/solution.js";
 import { day06PartOneSolution } from "./src/day_06/part_one/solution.js";
+import { day06PartTwoSolution } from "./src/day_06/part_two/solution.js";
 
 console.log({
   day01: {
@@ -30,6 +31,7 @@ console.log({
     partOne: day05PartOneSolution
   },
   day06: {
-    partOne: day06PartOneSolution
+    partOne: day06PartOneSolution,
+    partTwo: day06PartTwoSolution
   }
 })
