@@ -13,12 +13,12 @@ function getStepsCount() {
   let steps = 0
   const { getCurrentDirection, setNextDirection } = initializeDirection()
 
-  for (let i = destinations.get("AAA")!.index; i < destinationsList.length; i++) {
+  let index = destinations.get("AAA")!.index
+
+  while (true) {
     steps++
-    const { from, left, right } = destinationsList[i]!
-
+    const { from, left, right } = destinationsList[index]!
     const currentDirection = getCurrentDirection()
-
     const nextDirection = currentDirection === "L"
       ? left
       : right
@@ -28,8 +28,7 @@ function getStepsCount() {
     }
 
     const nextDestination = destinations.get(nextDirection)!
-    i = nextDestination.index
-    i--
+    index = nextDestination.index
 
     setNextDirection()
   }
@@ -81,5 +80,6 @@ function getDestinationsFromLine(line: string): Destinations {
     right: destinationsMatch[2],
   }
 }
+
 
 export const day08PartOneSolution = stepsCount
