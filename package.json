@@ -6,12 +6,16 @@
   "type": "module",
   "scripts": {
     "watch": "tsc --watch",
-    "start": "node --watch ./dist/script.js"
+    "start": "node --watch",
+    "test": "vitest --reporter=verbose"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^20.10.3"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
   }
 }

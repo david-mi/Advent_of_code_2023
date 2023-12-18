@@ -82,6 +82,4 @@ function getDestinationsFromLine(line: string): Destinations {
   }
 }
 
-
-
 export const day08PartOneSolution = stepsCount
