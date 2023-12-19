@@ -5,19 +5,19 @@ import type { Destinations } from "./types.js";
 
 const inputLines = setInputLinesToArray(input)
 const directions = inputLines[0]!
-const destinations = initializeDestinations()
+const destinations = initializeDestinations(inputLines)
 const destinationsList = Array.from(destinations.values())
-const stepsCount = getStepsCount()
+const stepsCount = getStepsCount(getStartingPoint())
 
-function getStepsCount() {
+function getStepsCount(startingDestination: Destinations & { index: number }) {
   let steps = 0
-  const { getCurrentDirection, setNextDirection } = initializeDirection()
+  const { getCurrentDirection, setNextDirection } = initializeDirection(directions)
 
-  let index = destinations.get("AAA")!.index
+  let index = startingDestination.index
 
   while (true) {
     steps++
-    const { from, left, right } = destinationsList[index]!
+    const { left, right } = destinationsList[index]!
     const currentDirection = getCurrentDirection()
     const nextDirection = currentDirection === "L"
       ? left
@@ -34,7 +34,11 @@ function getStepsCount() {
   }
 }
 
-function initializeDirection() {
+function getStartingPoint() {
+  return destinations.get("AAA")!
+}
+
+export function initializeDirection(directions: string) {
   let currentDirectionIndex = 0
 
   return {
@@ -53,7 +57,7 @@ function initializeDirection() {
   }
 }
 
-function initializeDestinations() {
+export function initializeDestinations(inputLines: string[]) {
   const destinations = new Map<string, Destinations & { index: number }>()
   const directionsStartingLine = 2
 
@@ -70,7 +74,7 @@ function initializeDestinations() {
   return destinations
 }
 
-function getDestinationsFromLine(line: string): Destinations {
+export function getDestinationsFromLine(line: string): Destinations {
   const destinationsRegex = /\w{3}/g
   const destinationsMatch = line.match(destinationsRegex) as [string, string, string]
 
