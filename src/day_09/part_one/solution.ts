@@ -1,4 +1,4 @@
-import { setInputLinesToArray } from "../helpers.js";
+import { setInputLinesToArray } from "../../helpers.js";
 import { inputExample } from "./inputs/input_example.js";
 import { input } from "./inputs/input.js";
 
