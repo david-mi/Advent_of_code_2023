@@ -93,4 +93,6 @@ describe("Day 10", () => {
   test("Part one", () => {
     expect(day10PartOneSolution).toBe(7066)
   })
+
+  // PART TWO MISSING
 })

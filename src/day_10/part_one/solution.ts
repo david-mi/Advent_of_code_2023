@@ -2,12 +2,12 @@ import { setInputLinesToArray } from "../../helpers.js";
 import { inputExample } from "./inputs/input_example.js";
 import { input } from "./inputs/input.js";
 
-interface Coordinates {
+export interface Coordinates {
   x: number,
   y: number
 }
 
-type Tile = Coordinates & {
+export type Tile = Coordinates & {
   symbol: string
 }
 
@@ -32,7 +32,7 @@ function getFarthestPointFromStartingPosition(field: string[]) {
   return steps / 2
 }
 
-function getAnimalCoordinates(field: string[]): Coordinates {
+export function getAnimalCoordinates(field: string[]): Coordinates {
   for (let y = 0; y < field.length; y++) {
     const line = field[y]!
 
@@ -54,7 +54,7 @@ interface GetNextTileProps {
   field: string[]
 }
 
-function getNextTile({ currentTile, previousTile, field }: GetNextTileProps): Tile {
+export function getNextTile({ currentTile, previousTile, field }: GetNextTileProps): Tile {
   function isNextTileSameThanPrevious({ x, y }: Coordinates) {
     return (
       x !== previousTile?.x ||
@@ -132,9 +132,10 @@ function getNextTile({ currentTile, previousTile, field }: GetNextTileProps): Ti
     y,
     symbol: field[y]![x]!
   }
+
 }
 
-function getNextToAnimalTile({ currentTile, field }: Omit<GetNextTileProps, "previousTile">): Tile {
+export function getNextToAnimalTile({ currentTile, field }: Omit<GetNextTileProps, "previousTile">): Tile {
   const directions = [
     {
       y: currentTile.y - 1,
@@ -172,6 +173,7 @@ function getNextToAnimalTile({ currentTile, field }: Omit<GetNextTileProps, "pre
 
   for (const direction of directions) {
     const tile = field[direction.y]?.[direction.x]
+    if (tile === undefined) continue
 
     if (direction.checker()) {
       return {
