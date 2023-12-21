@@ -5,20 +5,20 @@ import { input } from "./inputs/input.js";
 export const inputLines = setInputLinesToArray(input)
 const dataset = inputLines.map(getHistory)
 
-function getHistory(inputLine: string) {
+export function getHistory(inputLine: string) {
   return inputLine
     .split(/\s+/)
     .map(Number)
 }
 
-function getHistoriesNextValueSum(dataset: number[][]) {
+export function getHistoriesValuesSum(dataset: number[][], getHistoryValueCallback: (sequences: number[][]) => number) {
   return dataset.reduce((historiesValuesSum, history) => {
     const sequences = getSequences([history])
-    return historiesValuesSum += getHistoryNextValue(sequences)
+    return historiesValuesSum += getHistoryValueCallback(sequences)
   }, 0)
 }
 
-function getSequences(sequences: number[][]): number[][] {
+export function getSequences(sequences: number[][]): number[][] {
   const nextSequence: number[] = []
   let zeroStepsCount = 0
   const currentSequence = sequences[0]!
@@ -54,5 +54,5 @@ function getHistoryNextValue(sequences: number[][]) {
   return result
 }
 
-const historiesValuesSum = getHistoriesNextValueSum(dataset)
+const historiesValuesSum = getHistoriesValuesSum(dataset, getHistoryNextValue)
 export const day09PartOneSolution = historiesValuesSum
