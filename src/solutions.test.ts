@@ -14,6 +14,7 @@ import { day07PartTwoSolution } from "./day_07/part_two/solution.js";
 import { day08PartOneSolution } from "./day_08/part_one/solution.js";
 import { day09PartOneSolution } from "./day_09/part_one/solution.js";
 import { day09PartTwoSolution } from "./day_09/part_two/solution.js";
+import { day10PartOneSolution } from "./day_10/part_one/solution.js";
 
 describe("Day 01", () => {
   test("Part one", () => {
@@ -85,5 +86,11 @@ describe("Day 09", () => {
   })
   test("Part two", () => {
     expect(day09PartTwoSolution).toBe(948)
+  })
+})
+
+describe("Day 10", () => {
+  test("Part one", () => {
+    expect(day10PartOneSolution).toBe(7066)
   })
 })
