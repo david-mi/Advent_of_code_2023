@@ -15,6 +15,7 @@ import { day08PartOneSolution } from "./day_08/part_one/solution.js";
 import { day09PartOneSolution } from "./day_09/part_one/solution.js";
 import { day09PartTwoSolution } from "./day_09/part_two/solution.js";
 import { day10PartOneSolution } from "./day_10/part_one/solution.js";
+import { day14PartOneSolution } from "./day_14/part_one/solution.js";
 import { day15PartOneSolution } from "./day_15/part_one/solution.js";
 import { day15PartTwoSolution } from "./day_15/part_two/solution.js";
 
@@ -99,7 +100,13 @@ describe("Day 10", () => {
   // PART TWO MISSING
 })
 
-// DAY 11, 12, 13, 14 MISSING
+// DAY 11, 12, 13 MISSING
+
+describe("Day 14", () => {
+  test("Part one", () => {
+    expect(day14PartOneSolution).toBe(105461)
+  })
+})
 
 describe("Day 15", () => {
   test("Part one", () => {
