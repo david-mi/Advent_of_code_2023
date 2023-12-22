@@ -5,7 +5,7 @@ import { input } from "./inputs/input.js";
 export const inputLine = setInputLinesToArray(input)[0]!
 const steps = splitLineIntoSteps(inputLine)
 
-function getNumberHash(char: string, currentValue: number) {
+export function getNumberHash(char: string, currentValue: number) {
   const asciiCode = char.charCodeAt(0)
   currentValue += asciiCode
   currentValue *= 17
@@ -13,11 +13,11 @@ function getNumberHash(char: string, currentValue: number) {
   return currentValue
 }
 
-function splitLineIntoSteps(line: String) {
+export function splitLineIntoSteps(line: String) {
   return line.split(",")
 }
 
-function getStepValue(step: string) {
+export function getStepValue(step: string) {
   let currentValue = 0
 
   for (const char of step) {
