@@ -7,7 +7,7 @@ const platform = drawPlatform(inputLine)
 tiltPlatformToNorth(platform)
 const totalLoadOnNorthSupportBeams = getTotalLoadOnNorthSupportBeams(platform)
 
-interface Coordinates {
+export interface Coordinates {
   x: number,
   y: number
 }
