@@ -19,6 +19,7 @@ import { day14PartOneSolution } from "./day_14/part_one/solution.js";
 import { day14PartTwoSolution } from "./day_14/part_two/solution.js";
 import { day15PartOneSolution } from "./day_15/part_one/solution.js";
 import { day15PartTwoSolution } from "./day_15/part_two/solution.js";
+import { day16PartOneSolution } from "./day_16/part_one/solution.js";
 
 describe("Day 01", () => {
   test("Part one", () => {
@@ -120,5 +121,11 @@ describe("Day 15", () => {
 
   test("Part two", () => {
     expect(day15PartTwoSolution).toBe(212449)
+  })
+})
+
+describe("Day 16", () => {
+  test("Part one", () => {
+    expect(day16PartOneSolution).toBe(7951)
   })
 })
